@@ -1,59 +1,244 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Task Manager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A beautiful and modern task management application built with **Laravel 12** and **Bootstrap 5.3**, featuring smooth animations and a responsive design.
 
-## About Laravel
+![Task Manager](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- 🎨 **Modern UI** - Beautiful gradient colors and clean design
+- 🎬 **Smooth Animations** - AOS (Animate On Scroll) library for engaging transitions
+- 📱 **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
+- ✅ **Task Management** - Create, read, update, and delete tasks
+- 📊 **Status Tracking** - Track tasks with three statuses: To Do, In Progress, Done
+- 📈 **Dashboard Stats** - Real-time statistics overview of all tasks
+- 🗓️ **Due Dates** - Set and track task deadlines
+- ⚠️ **Form Validation** - Client and server-side validation with helpful error messages
+- 🔔 **Notifications** - Success and error alerts with auto-dismiss
+- 💾 **Database Powered** - SQLite/MySQL database for persistent storage
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Screenshots
 
-## Learning Laravel
+### Dashboard
+- View all tasks in a beautiful table layout
+- See task statistics at a glance
+- Quick actions for edit and delete
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Create/Edit Tasks
+- Clean and intuitive forms
+- Status selection with visual indicators
+- Due date picker
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📋 Prerequisites
 
-## Laravel Sponsors
+Before you begin, ensure you have the following installed:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **PHP** 8.2 or higher
+- **Composer** - PHP dependency manager
+- **Node.js & NPM** - For frontend assets
+- **SQLite** / **MySQL** / **PostgreSQL** - Database
 
-### Premium Partners
+## 🛠️ Installation
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 1. Clone the Repository
 
-## Contributing
+```bash
+git clone https://github.com/Chrisjohanes/task-manager.git
+cd task-manager
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 2. Install Dependencies
 
-## Code of Conduct
+```bash
+# Install PHP dependencies
+composer install
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Install Node.js dependencies
+npm install
+```
 
-## Security Vulnerabilities
+### 3. Environment Setup
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+# Copy the example environment file
+cp .env.example .env
 
-## License
+# Generate application key
+php artisan key:generate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 4. Configure Database
+
+Edit the `.env` file and set up your database connection:
+
+```env
+DB_CONNECTION=sqlite
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=task_manager
+# DB_USERNAME=root
+# DB_PASSWORD=
+```
+
+For SQLite, simply create the database file:
+```bash
+touch database/database.sqlite
+```
+
+### 5. Run Migrations & Seeders
+
+```bash
+# Run migrations to create tables
+php artisan migrate
+
+# (Optional) Seed with sample data
+php artisan db:seed
+```
+
+### 6. Build Frontend Assets
+
+```bash
+# For development
+npm run dev
+
+# For production
+npm run build
+```
+
+### 7. Start the Application
+
+```bash
+# Option 1: Laravel development server
+php artisan serve
+
+# Option 2: Full development suite (server, queue, logs, vite)
+composer dev
+```
+
+Visit `http://127.0.0.1:8000` in your browser.
+
+## 📁 Project Structure
+
+```
+task-manager/
+├── app/
+│   ├── Http/Controllers/
+│   │   └── TaskController.php      # Task CRUD operations
+│   └── Models/
+│       └── Task.php                 # Task model
+├── database/
+│   ├── migrations/                  # Database migrations
+│   └── seeders/
+│       └── TaskSeeder.php           # Sample data seeder
+├── resources/
+│   └── views/
+│       ├── layouts/
+│       │   └── app.blade.php        # Main layout with Bootstrap
+│       ├── tasks/
+│       │   ├── index.blade.php      # Task list view
+│       │   ├── create.blade.php     # Create task form
+│       │   └── edit.blade.php       # Edit task form
+│       └── home.blade.php           # Landing page
+└── routes/
+    └── web.php                      # Application routes
+```
+
+## 🎨 Technologies Used
+
+### Backend
+- **Laravel 12** - PHP web framework
+- **Eloquent ORM** - Database abstraction
+- **Carbon** - Date/time handling
+
+### Frontend
+- **Bootstrap 5.3** - CSS framework
+- **Bootstrap Icons** - Icon library
+- **AOS (Animate On Scroll)** - Animation library
+- **Google Fonts (Poppins)** - Typography
+
+### Development Tools
+- **Vite** - Frontend build tool
+- **Composer** - PHP package manager
+- **NPM** - Node package manager
+
+## 📖 Usage Guide
+
+### Creating a Task
+
+1. Click **"Create New Task"** or the **+** button
+2. Fill in the task title (required)
+3. Add a description (optional)
+4. Select a status: To Do, In Progress, or Done
+5. Set a due date (optional)
+6. Click **"Create Task"**
+
+### Managing Tasks
+
+- **View Tasks**: Navigate to `/tasks` to see all tasks
+- **Edit Task**: Click the pencil icon (✏️) on any task
+- **Delete Task**: Click the trash icon (🗑️) and confirm
+- **Filter by Status**: Tasks are color-coded by status
+
+### Task Statuses
+
+| Status | Color | Description |
+|--------|-------|-------------|
+| To Do | 🟡 Yellow | Task not yet started |
+| In Progress | 🔵 Blue | Task currently being worked on |
+| Done | 🟢 Green | Task completed |
+
+## 🔧 Available Commands
+
+```bash
+# Run database migrations
+php artisan migrate
+
+# Seed database with sample data
+php artisan db:seed
+
+# Clear application cache
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+
+# Run tests
+composer test
+
+# Development server with hot reload
+composer dev
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+## 👨‍💻 Author
+
+**Chrisjohanes**
+
+- GitHub: [@Chrisjohanes](https://github.com/Chrisjohanes)
+- Repository: [task-manager](https://github.com/Chrisjohanes/task-manager)
+
+## 🙏 Acknowledgments
+
+- [Laravel](https://laravel.com) - The PHP framework for web artisans
+- [Bootstrap](https://getbootstrap.com) - Powerful front-end framework
+- [AOS Animation](https://michalsnik.github.io/aos/) - Animate on scroll library
+- [Bootstrap Icons](https://icons.getbootstrap.com) - Free icon library
+
+---
+
+<p align="center">Made with ❤️ using Laravel & Bootstrap</p>
