@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
 use App\Models\Task;
 use Carbon\Carbon;
 
@@ -13,6 +14,18 @@ class TaskSeeder extends Seeder
      */
     public function run(): void
     {
+        // Create a demo user
+        $user = User::firstOrCreate(
+            ['email' => 'user@example.com'],
+            [
+                'name' => 'Demo User',
+                'password' => bcrypt('password123'),
+            ]
+        );
+
+        // Clear existing tasks for this user
+        $user->tasks()->delete();
+
         $tasks = [
             [
                 'title' => 'Complete Project Documentation',
@@ -47,7 +60,7 @@ class TaskSeeder extends Seeder
         ];
 
         foreach ($tasks as $task) {
-            Task::create($task);
+            $user->tasks()->create($task);
         }
     }
 }

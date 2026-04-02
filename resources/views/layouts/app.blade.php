@@ -341,7 +341,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">
                             <i class="bi bi-house me-1"></i>Home
@@ -352,6 +352,49 @@
                             <i class="bi bi-list-task me-1"></i>Tasks
                         </a>
                     </li>
+                    @auth
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-semibold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-person-circle me-1"></i>{{ Auth::user()->name }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" style="border-radius: 15px;">
+                                <li class="px-3 py-2 border-bottom">
+                                    <small class="text-muted">Logged in as</small><br>
+                                    <strong>{{ Auth::user()->email }}</strong>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item py-2" href="/tasks">
+                                        <i class="bi bi-list-task me-2"></i>My Tasks
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item py-2" href="/tasks/create">
+                                        <i class="bi bi-plus-circle me-2"></i>New Task
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="px-3 pb-2">
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-danger w-100 btn-sm">
+                                            <i class="bi bi-box-arrow-right me-1"></i>Logout
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="btn btn-outline-custom btn-sm me-2" href="/login">
+                                <i class="bi bi-box-arrow-in-right me-1"></i>Login
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-gradient btn-sm" href="/register">
+                                <i class="bi bi-person-plus me-1"></i>Register
+                            </a>
+                        </li>
+                    @endauth
                 </ul>
             </div>
         </div>

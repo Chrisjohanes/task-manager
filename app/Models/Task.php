@@ -8,11 +8,20 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 class Task extends Model
 {
     protected $fillable = [
+        'user_id',
         'title',
         'description',
         'status',
         'due_date'
     ];
+
+    /**
+     * Get the user that owns the task.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     /**
      * Cast attributes to native types.

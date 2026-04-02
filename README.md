@@ -19,6 +19,9 @@ A beautiful and modern task management application built with **Laravel 12** and
 - ⚠️ **Form Validation** - Client and server-side validation with helpful error messages
 - 🔔 **Notifications** - Success and error alerts with auto-dismiss
 - 💾 **Database Powered** - SQLite/MySQL database for persistent storage
+- 🔐 **User Authentication** - Secure login and registration system
+- 👤 **User Accounts** - Each user has their own private tasks
+- 🚀 **Demo Mode** - Try the app instantly without creating an account
 
 ## 🚀 Screenshots
 
@@ -119,6 +122,19 @@ composer dev
 ```
 
 Visit `http://127.0.0.1:8000` in your browser.
+
+## 🔐 Authentication & Demo Access
+
+### Demo Mode (No Registration Required)
+Click **"Try Demo"** on the homepage or login page to instantly access the app with a demo account. Perfect for exploring features before signing up!
+
+### Demo Account Credentials
+After seeding the database, you can also login with:
+- **Email**: `user@example.com`
+- **Password**: `password123`
+
+### Create Your Account
+Click **"Register"** to create a personal account. Your tasks will be saved permanently and synced across sessions.
 
 ## 📁 Project Structure
 

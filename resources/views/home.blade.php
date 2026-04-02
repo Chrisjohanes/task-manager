@@ -12,16 +12,31 @@
                 <span class="text-warning">Efficiently</span>
             </h1>
             <p class="text-white opacity-75 lead mb-4">
-                Stay organized and boost your productivity with our simple yet powerful task management system. 
+                Stay organized and boost your productivity with our simple yet powerful task management system.
                 Create, track, and complete your tasks with ease.
             </p>
             <div class="d-flex gap-3 flex-wrap">
-                <a href="/tasks" class="btn btn-light btn-lg px-4 py-3" style="border-radius: 15px;">
-                    <i class="bi bi-list-task me-2"></i>View My Tasks
-                </a>
-                <a href="/tasks/create" class="btn btn-outline-light btn-lg px-4 py-3" style="border-radius: 15px;">
-                    <i class="bi bi-plus-circle me-2"></i>Create New Task
-                </a>
+                @auth
+                    <a href="/tasks" class="btn btn-light btn-lg px-4 py-3" style="border-radius: 15px;">
+                        <i class="bi bi-list-task me-2"></i>My Tasks
+                    </a>
+                    <a href="/tasks/create" class="btn btn-outline-light btn-lg px-4 py-3" style="border-radius: 15px;">
+                        <i class="bi bi-plus-circle me-2"></i>New Task
+                    </a>
+                @else
+                    <a href="/register" class="btn btn-light btn-lg px-4 py-3" style="border-radius: 15px;">
+                        <i class="bi bi-person-plus me-2"></i>Get Started
+                    </a>
+                    <a href="/login" class="btn btn-outline-light btn-lg px-4 py-3" style="border-radius: 15px;">
+                        <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
+                    </a>
+                    <form action="/auth/demo" method="POST" class="d-inline">
+                        @csrf
+                        <button type="submit" class="btn btn-warning btn-lg px-4 py-3" style="border-radius: 15px;">
+                            <i class="bi bi-rocket-takeoff me-2"></i>Try Demo
+                        </button>
+                    </form>
+                @endauth
             </div>
         </div>
         <div class="col-lg-6" data-aos="fade-left">
