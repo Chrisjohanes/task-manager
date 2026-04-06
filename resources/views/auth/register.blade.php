@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Register - Task Manager')
+@section('title', '🌟 Register - Join TaskFlow Today')
 
 @section('content')
 <div class="container py-5">

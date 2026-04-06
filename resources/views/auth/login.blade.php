@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Login - Task Manager')
+@section('title', '🔐 Login - Access Your Workspace')
 
 @section('content')
 <div class="container py-5">

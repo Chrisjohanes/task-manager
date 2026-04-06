@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Task')
+@section('title', '✏️ Edit Task - Refine Your Plans')
 
 @section('content')
 <div class="container" data-aos="fade-up">

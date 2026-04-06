@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Task Manager - Dashboard')
+@section('title', '📋 Task Dashboard - Manage Your Goals')
 
 @section('content')
 <div class="container" data-aos="fade-up">
